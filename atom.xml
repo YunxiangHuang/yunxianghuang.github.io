@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>無痕的碎碎念</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://wuhenqs.com/"/>
+  <updated>2017-01-18T07:12:02.000Z</updated>
+  <id>http://wuhenqs.com/</id>
+  
+  <author>
+    <name>Yunxiang Huang</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Shell Script &#39;Trap&#39;</title>
+    <link href="http://wuhenqs.com/2017/01/18/shell-script-trap/"/>
+    <id>http://wuhenqs.com/2017/01/18/shell-script-trap/</id>
+    <published>2017-01-18T02:20:50.000Z</published>
+    <updated>2017-01-18T07:12:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近写 Shell 脚本的时候发现一个需求：</p>
+<ul>
+<li>有一条（或组）命令不希望被打断执行，或者不能被打断执行。</li>
+</ul>
+<p>举个例子来说，有一个时间比较长的追加写入操作，中间在执行过程中如果中断的话会很麻烦，要清理文件或者判断写到什么位置了。这时候如果有个方法能保证这个操作完成，不会因为手抖按了 <code>C-c</code> 被中断掉。</p>
+<p>在不存在的网站 Google 上找了一下，在 Shell 中有一个捕获系统信号的命令 <code>trap</code> 。</p>
+<h1 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h1><p><code>trap command signals</code></p>
+<p><code>trap</code> 在捕获到 <code>signals</code> 中定义的信号之后，会执行 <code>command</code> 指定的命令。</p>
+<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><p>虽然提供了这么一个命令来捕获系统信号，但是在实际使用的时候会发现很多信号捕获不了：</p>
+<ul>
+<li><code>SIGSTOP</code></li>
+<li><code>SIGKILL</code></li>
+</ul>
+<p>此外，处于 Shell 的交互模式的时候，以下信号也捕获不了：</p>
+<ul>
+<li><code>SIGTTIN</code></li>
+<li><code>SIGTTOU</code></li>
+<li><code>SIGTSTP</code></li>
+</ul>
+<h1 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h1><p>上面说了这么多，然而并没有解决问题，虽然捕获了信号，但是还是会打断当前进行的操作。<br><code>trap</code> 在捕获到信号，执行指定的 <code>command</code> 的时候，会忽略掉其他的信号（当然 <code>SIGKILL</code> 和 <code>SIGSTOP</code> 这种没办法）。利用这一点，把需要保证完成的操作作为指定的 <code>command</code> ，然后在设置捕获信号之后马上对自己发出一个可以捕获的信号就可以了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">assert() &#123;</div><div class="line">    trap &apos;$@; trap - SIGINT&apos; SIGINT</div><div class="line">    kill -INT $$</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>只要把需要执行的命令作为 <code>assert</code> 函数的参数传入就好了。</p>
+<h1 id="还有个问题"><a href="#还有个问题" class="headerlink" title="还有个问题"></a>还有个问题</h1><p>这个方法对 <code>C-z</code> 是无效的，不过可以利用它来结束掉这条指令。毕竟执行到一半发现什么奇怪的问题，需要结束这种情况还是难免的。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近写 Shell 脚本的时候发现一个需求：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;有一条（或组）命令不希望被打断执行，或者不能被打断执行。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;举个例子来说，有一个时间比较长的追加写入操作，中间在执行过程中如果中断的话会很麻烦，要清理文件或者判断写到什么位置了
+    
+    </summary>
+    
+    
+      <category term="shell" scheme="http://wuhenqs.com/tags/shell/"/>
+    
+      <category term="script" scheme="http://wuhenqs.com/tags/script/"/>
+    
+      <category term="trap" scheme="http://wuhenqs.com/tags/trap/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://wuhenqs.com/2017/01/17/Hello-world/"/>
+    <id>http://wuhenqs.com/2017/01/17/Hello-world/</id>
+    <published>2017-01-17T11:18:10.000Z</published>
+    <updated>2017-01-17T11:24:43.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Hello-world"><a href="#Hello-world" class="headerlink" title="Hello world"></a>Hello world</h1><p>好久没有写博客了，这次在Github上面开个坑，发一些碎碎念。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Hello-world&quot;&gt;&lt;a href=&quot;#Hello-world&quot; class=&quot;headerlink&quot; title=&quot;Hello world&quot;&gt;&lt;/a&gt;Hello world&lt;/h1&gt;&lt;p&gt;好久没有写博客了，这次在Github上面开个坑，发一些碎碎念。&lt;/p
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
