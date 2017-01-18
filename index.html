@@ -276,7 +276,7 @@
               
                 
                 <a class="post-title-link" href="/2017/01/18/shell-script-trap/" itemprop="url">
-                  Shell Script 'Trap'
+                  Shell Script - Trap
                 </a>
               
             
@@ -329,32 +329,18 @@
 
       
         
-          
-            <p>最近写 Shell 脚本的时候发现一个需求：</p>
+          <p>最近写 Shell 脚本的时候发现一个需求：</p>
 <ul>
 <li>有一条（或组）命令不希望被打断执行，或者不能被打断执行。</li>
 </ul>
-<p>举个例子来说，有一个时间比较长的追加写入操作，中间在执行过程中如果中断的话会很麻烦，要清理文件或者判断写到什么位置了。这时候如果有个方法能保证这个操作完成，不会因为手抖按了 <code>C-c</code> 被中断掉。</p>
-<p>在不存在的网站 Google 上找了一下，在 Shell 中有一个捕获系统信号的命令 <code>trap</code> 。</p>
-<h1 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h1><p><code>trap command signals</code></p>
-<p><code>trap</code> 在捕获到 <code>signals</code> 中定义的信号之后，会执行 <code>command</code> 指定的命令。</p>
-<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><p>虽然提供了这么一个命令来捕获系统信号，但是在实际使用的时候会发现很多信号捕获不了：</p>
-<ul>
-<li><code>SIGSTOP</code></li>
-<li><code>SIGKILL</code></li>
-</ul>
-<p>此外，处于 Shell 的交互模式的时候，以下信号也捕获不了：</p>
-<ul>
-<li><code>SIGTTIN</code></li>
-<li><code>SIGTTOU</code></li>
-<li><code>SIGTSTP</code></li>
-</ul>
-<h1 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h1><p>上面说了这么多，然而并没有解决问题，虽然捕获了信号，但是还是会打断当前进行的操作。<br><code>trap</code> 在捕获到信号，执行指定的 <code>command</code> 的时候，会忽略掉其他的信号（当然 <code>SIGKILL</code> 和 <code>SIGSTOP</code> 这种没办法）。利用这一点，把需要保证完成的操作作为指定的 <code>command</code> ，然后在设置捕获信号之后马上对自己发出一个可以捕获的信号就可以了。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">assert() &#123;</div><div class="line">    trap &apos;$@; trap - SIGINT&apos; SIGINT</div><div class="line">    kill -INT $$</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>只要把需要执行的命令作为 <code>assert</code> 函数的参数传入就好了。</p>
-<h1 id="还有个问题"><a href="#还有个问题" class="headerlink" title="还有个问题"></a>还有个问题</h1><p>这个方法对 <code>C-z</code> 是无效的，不过可以利用它来结束掉这条指令。毕竟执行到一半发现什么奇怪的问题，需要结束这种情况还是难免的。</p>
-
-          
+<p>举个例子来说，有一个时间比较长的追加写入操作，中间在执行过程中如果中断的话会很麻烦，要清理文件或者判断写到什么位置了。这时候如果有个方法能保证这个操作完成，不会因为手抖按了 <code>C-c</code> 被中断掉。<br>在不存在的网站 Google 上找了一下，在 Shell 中有一个捕获系统信号的命令 <code>trap</code> 。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/01/18/shell-script-trap/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
