@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wuhenqs.com/"/>
-  <updated>2017-01-25T03:47:29.000Z</updated>
+  <updated>2017-02-09T11:10:44.000Z</updated>
   <id>http://wuhenqs.com/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="http://wuhenqs.com/2017/01/24/Golang-%E5%90%84%E7%A7%8D%E8%BE%93%E5%85%A5%E5%A7%BF%E5%8A%BF/"/>
     <id>http://wuhenqs.com/2017/01/24/Golang-各种输入姿势/</id>
     <published>2017-01-24T07:21:22.000Z</published>
-    <updated>2017-01-25T03:47:29.000Z</updated>
+    <updated>2017-02-09T11:10:44.000Z</updated>
     
-    <content type="html"><![CDATA[<p>最近开始在<a href="https://hackerrank.com" target="_blank" rel="external">Hacker Rank</a>上面刷题玩，因为从开始工作起一直是用的Go语言作为主力开发语言，所以就选择用Go语言来解题了。</p>
+    <content type="html"><![CDATA[<p><b>原创文章，转载请标明出处：</b><a href="http://wuhenqs.com" target="_blank">無痕的碎碎念</a><br><b>本文链接地址：</b><a href="http://wuhenqs.com/2017/01/24/Golang-各种输入姿势/" target="_blank">Golang 各种输入姿势</a></p>
+<p>最近开始在<a href="https://hackerrank.com" target="_blank" rel="external">Hacker Rank</a>上面刷题玩，因为从开始工作起一直是用的Go语言作为主力开发语言，所以就选择用Go语言来解题了。</p>
 <p>刚开始做第一题<a href="https://www.hackerrank.com/challenges/30-hello-world" target="_blank" rel="external">Hello World</a>，突然发现自己还没用Go语言从<code>stdin</code>读取过数据。于是自己摸索加各种地方找了一下资料，打算总结一下Go语言从标准输入读取数据的姿势。</p>
 <a id="more"></a>
 <h2 id="fmt"><a href="#fmt" class="headerlink" title="fmt"></a><code>fmt</code></h2><p>经常使用<code>fmt.Printf</code>之类的做<ruby>输出<rp> (</rp><rt>tiáo shì</rt><rp>) </rp></ruby>，在处理输入自然是第一个想到<code>fmt</code>包。</p>
@@ -150,7 +151,8 @@
     
     <summary type="html">
     
-      &lt;p&gt;最近开始在&lt;a href=&quot;https://hackerrank.com&quot;&gt;Hacker Rank&lt;/a&gt;上面刷题玩，因为从开始工作起一直是用的Go语言作为主力开发语言，所以就选择用Go语言来解题了。&lt;/p&gt;
+      &lt;p&gt;&lt;b&gt;原创文章，转载请标明出处：&lt;/b&gt;&lt;a href=&quot;http://wuhenqs.com&quot; target=&quot;_blank&quot;&gt;無痕的碎碎念&lt;/a&gt;&lt;br/&gt;&lt;b&gt;本文链接地址：&lt;/b&gt;&lt;a href=&quot;http://wuhenqs.com/2017/01/24/Golang-各种输入姿势/&quot; target=&quot;_blank&quot;&gt;Golang 各种输入姿势&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;最近开始在&lt;a href=&quot;https://hackerrank.com&quot;&gt;Hacker Rank&lt;/a&gt;上面刷题玩，因为从开始工作起一直是用的Go语言作为主力开发语言，所以就选择用Go语言来解题了。&lt;/p&gt;
 &lt;p&gt;刚开始做第一题&lt;a href=&quot;https://www.hackerrank.com/challenges/30-hello-world&quot;&gt;Hello World&lt;/a&gt;，突然发现自己还没用Go语言从&lt;code&gt;stdin&lt;/code&gt;读取过数据。于是自己摸索加各种地方找了一下资料，打算总结一下Go语言从标准输入读取数据的姿势。&lt;/p&gt;
     
     </summary>
@@ -173,9 +175,10 @@
     <link href="http://wuhenqs.com/2017/01/18/shell-script-trap/"/>
     <id>http://wuhenqs.com/2017/01/18/shell-script-trap/</id>
     <published>2017-01-18T02:20:50.000Z</published>
-    <updated>2017-01-18T09:42:13.000Z</updated>
+    <updated>2017-02-09T11:10:59.000Z</updated>
     
-    <content type="html"><![CDATA[<p>最近写 Shell 脚本的时候发现一个需求：</p>
+    <content type="html"><![CDATA[<p><b>原创文章，转载请标明出处：</b><a href="http://wuhenqs.com" target="_blank">無痕的碎碎念</a><br><b>本文链接地址：</b><a href="http://wuhenqs.com/2017/01/18/shell-script-trap/" target="_blank">Shell Script - Trap</a></p>
+<p>最近写 Shell 脚本的时候发现一个需求：</p>
 <ul>
 <li>有一条（或组）命令不希望被打断执行，或者不能被打断执行。</li>
 </ul>
@@ -199,7 +202,8 @@
     
     <summary type="html">
     
-      &lt;p&gt;最近写 Shell 脚本的时候发现一个需求：&lt;/p&gt;
+      &lt;p&gt;&lt;b&gt;原创文章，转载请标明出处：&lt;/b&gt;&lt;a href=&quot;http://wuhenqs.com&quot; target=&quot;_blank&quot;&gt;無痕的碎碎念&lt;/a&gt;&lt;br/&gt;&lt;b&gt;本文链接地址：&lt;/b&gt;&lt;a href=&quot;http://wuhenqs.com/2017/01/18/shell-script-trap/&quot; target=&quot;_blank&quot;&gt;Shell Script - Trap&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;最近写 Shell 脚本的时候发现一个需求：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;有一条（或组）命令不希望被打断执行，或者不能被打断执行。&lt;/li&gt;
 &lt;/ul&gt;
@@ -221,14 +225,15 @@
     <link href="http://wuhenqs.com/2017/01/17/Hello-world/"/>
     <id>http://wuhenqs.com/2017/01/17/Hello-world/</id>
     <published>2017-01-17T11:18:10.000Z</published>
-    <updated>2017-01-17T11:24:43.000Z</updated>
+    <updated>2017-02-09T11:06:23.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Hello-world"><a href="#Hello-world" class="headerlink" title="Hello world"></a>Hello world</h1><p>好久没有写博客了，这次在Github上面开个坑，发一些碎碎念。</p>
+    <content type="html"><![CDATA[<p><b>原创文章，转载请标明出处：</b><a href="http://wuhenqs.com" target="_blank">無痕的碎碎念</a><br><b>本文链接地址：</b><a href="http://wuhenqs.com/2017/01/17/Hello-world/" target="_blank">Hello World</a></p>
+<p>好久没有写博客了，这次在Github上面开个坑，发一些碎碎念。</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Hello-world&quot;&gt;&lt;a href=&quot;#Hello-world&quot; class=&quot;headerlink&quot; title=&quot;Hello world&quot;&gt;&lt;/a&gt;Hello world&lt;/h1&gt;&lt;p&gt;好久没有写博客了，这次在Github上面开个坑，发一些碎碎念。&lt;/p
+      &lt;p&gt;&lt;b&gt;原创文章，转载请标明出处：&lt;/b&gt;&lt;a href=&quot;http://wuhenqs.com&quot; target=&quot;_blank&quot;&gt;無痕的碎碎念&lt;/a&gt;&lt;br&gt;&lt;b&gt;本文链接地址：&lt;/b&gt;&lt;a href=&quot;http://wuhenqs.com/2017/01/17/Hello
     
     </summary>
     

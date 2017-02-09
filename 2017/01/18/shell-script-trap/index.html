@@ -86,28 +86,31 @@
 
 
 
-<meta name="description" content="最近写 Shell 脚本的时候发现一个需求：
+<meta name="description" content="原创文章，转载请标明出处：無痕的碎碎念本文链接地址：Shell Script - Trap
+最近写 Shell 脚本的时候发现一个需求：
 
 有一条（或组）命令不希望被打断执行，或者不能被打断执行。
 
-举个例子来说，有一个时间比较长的追加写入操作，中间在执行过程中如果中断的话会很麻烦，要清理文件或者判断写到什么位置了。这时候如果有个方法能保证这个操作完成，不会因为手抖按了 C-c 被中断掉。在不存在的网站 Google 上找了一下，在 Shell 中有一个捕获系统信号的命令 trap 。">
+举个例子来说，有一个时间比较长的追加写入操作，中间在执行过程中如果中断的话会很麻烦，要清理文件或者判断写到什么位置了。这时候如果有个方法能保证这个操作完成，不会因为手抖按了 C-c 被中断掉。在不存在">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Shell Script - Trap">
 <meta property="og:url" content="http://wuhenqs.com/2017/01/18/shell-script-trap/index.html">
 <meta property="og:site_name" content="無痕的碎碎念">
-<meta property="og:description" content="最近写 Shell 脚本的时候发现一个需求：
+<meta property="og:description" content="原创文章，转载请标明出处：無痕的碎碎念本文链接地址：Shell Script - Trap
+最近写 Shell 脚本的时候发现一个需求：
 
 有一条（或组）命令不希望被打断执行，或者不能被打断执行。
 
-举个例子来说，有一个时间比较长的追加写入操作，中间在执行过程中如果中断的话会很麻烦，要清理文件或者判断写到什么位置了。这时候如果有个方法能保证这个操作完成，不会因为手抖按了 C-c 被中断掉。在不存在的网站 Google 上找了一下，在 Shell 中有一个捕获系统信号的命令 trap 。">
-<meta property="og:updated_time" content="2017-01-18T09:42:13.000Z">
+举个例子来说，有一个时间比较长的追加写入操作，中间在执行过程中如果中断的话会很麻烦，要清理文件或者判断写到什么位置了。这时候如果有个方法能保证这个操作完成，不会因为手抖按了 C-c 被中断掉。在不存在">
+<meta property="og:updated_time" content="2017-02-09T11:10:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shell Script - Trap">
-<meta name="twitter:description" content="最近写 Shell 脚本的时候发现一个需求：
+<meta name="twitter:description" content="原创文章，转载请标明出处：無痕的碎碎念本文链接地址：Shell Script - Trap
+最近写 Shell 脚本的时候发现一个需求：
 
 有一条（或组）命令不希望被打断执行，或者不能被打断执行。
 
-举个例子来说，有一个时间比较长的追加写入操作，中间在执行过程中如果中断的话会很麻烦，要清理文件或者判断写到什么位置了。这时候如果有个方法能保证这个操作完成，不会因为手抖按了 C-c 被中断掉。在不存在的网站 Google 上找了一下，在 Shell 中有一个捕获系统信号的命令 trap 。">
+举个例子来说，有一个时间比较长的追加写入操作，中间在执行过程中如果中断的话会很麻烦，要清理文件或者判断写到什么位置了。这时候如果有个方法能保证这个操作完成，不会因为手抖按了 C-c 被中断掉。在不存在">
 
 
 
@@ -339,7 +342,8 @@
       
 
       
-        <p>最近写 Shell 脚本的时候发现一个需求：</p>
+        <p><b>原创文章，转载请标明出处：</b><a href="http://wuhenqs.com" target="_blank">無痕的碎碎念</a><br><b>本文链接地址：</b><a href="http://wuhenqs.com/2017/01/18/shell-script-trap/" target="_blank">Shell Script - Trap</a></p>
+<p>最近写 Shell 脚本的时候发现一个需求：</p>
 <ul>
 <li>有一条（或组）命令不希望被打断执行，或者不能被打断执行。</li>
 </ul>
